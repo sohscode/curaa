@@ -1,4 +1,5 @@
-import 'package:curaa/features/home/ui/home_screen.dart';
+import 'package:curaa/core/helpers/extension.dart';
+import 'package:curaa/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 class DeliveryScreen extends StatelessWidget {
@@ -28,10 +29,7 @@ class DeliveryScreen extends StatelessWidget {
             const Gap(40),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()),
-                );
+              context.pushNamed(Routes.buttonNav);
               },
               child: Container(
                 width: 300,
@@ -40,10 +38,7 @@ class DeliveryScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFF30877C),
                   borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 3,
-                  ),
+                  border: Border.all(color: Colors.white, width: 3),
                 ),
                 child: const Text(
                   'OK',
@@ -61,6 +56,3 @@ class DeliveryScreen extends StatelessWidget {
     );
   }
 }
-
-
-

@@ -1,17 +1,18 @@
+import 'package:curaa/core/helpers/extension.dart';
+import 'package:curaa/core/routing/routes.dart';
 import 'package:flutter/material.dart';
-import 'delivery_screen.dart';
+import '../../delivary/ui/delivery_screen.dart';
+
 class MapScreen extends StatelessWidget {
   const MapScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset(
-              'assets/images/map.jpeg',
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset('assets/images/map.jpeg', fit: BoxFit.cover),
           ),
           Positioned(
             bottom: 50,
@@ -19,12 +20,7 @@ class MapScreen extends StatelessWidget {
             right: 0,
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>  DeliveryScreen(),
-                  ),
-                );
+                context.pushNamed(Routes.delivery);
               },
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.8,
@@ -33,19 +29,12 @@ class MapScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFF30877C),
                   borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 3,
-                  ),
+                  border: Border.all(color: Colors.white, width: 3),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(
-                      Icons.delivery_dining,
-                      color: Colors.white,
-                      size: 24,
-                    ),
+                    Icon(Icons.delivery_dining, color: Colors.white, size: 24),
                     SizedBox(width: 10),
                     Text(
                       'Confirm my location',
@@ -65,5 +54,3 @@ class MapScreen extends StatelessWidget {
     );
   }
 }
-
-
