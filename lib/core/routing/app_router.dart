@@ -2,7 +2,7 @@ import 'package:curaa/features/delivary/ui/delivery_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/buttom_nav_bar/logic/button_nav_bar_cubit.dart';
-import '../../features/buttom_nav_bar/ui/buttom_nav_bar.dart';
+import '../../features/buttom_nav_bar/ui/bottom_nav_bar.dart';
 import '../../features/login/ui/login_screen.dart';
 import '../../features/map/ui/map_screen.dart';
 import '../../features/on_boarding/ui/on_boarding_screen.dart';
@@ -24,7 +24,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => ButtonNavBarCubit(),
-            child: const ButtomNavBar(),
+            child: const BottomNavBar(),
           ),
         );
       case '/delivery':

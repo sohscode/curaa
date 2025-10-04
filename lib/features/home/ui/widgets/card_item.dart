@@ -1,9 +1,10 @@
+import 'package:curaa/features/home/data/model/pharmacy_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardItem extends StatelessWidget {
-  const CardItem({super.key});
-
+  const CardItem({super.key,required this.pharmacy});
+final PharmacyModel pharmacy;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -14,16 +15,16 @@ class CardItem extends StatelessWidget {
           margin:  EdgeInsets.only(right: 12.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.r),
-            image: const DecorationImage(
-              image: AssetImage(
-                "assets/images/Gemini_Generated_Image_j63zb5j63zb5j63z.png",
-              ),
+            image:  DecorationImage(
+              image: Image.network(
+                "${pharmacy.logo}",
+              ).image,
               fit: BoxFit.cover,
             ),
           ),
         ),
          SizedBox(height: 6.h),
-        const Text("Panadol"),
+         Text(pharmacy.name ??""),
       ],
     );
   }

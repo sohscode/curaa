@@ -6,16 +6,17 @@ class CustomTextFormFiled extends StatelessWidget {
     super.key,
     required this.text,
     required this.controller,
+    required this.validator,
   });
 
   final String text;
   final TextEditingController controller;
-
+final String? Function(String?) validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      obscureText: true,
+      validator:validator ,
       decoration: InputDecoration(
         hintText: text,
         filled: true,

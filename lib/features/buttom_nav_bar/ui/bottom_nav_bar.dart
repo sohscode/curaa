@@ -3,23 +3,21 @@ import 'package:curaa/features/home/ui/screens/home_screen.dart';
 import 'package:curaa/features/profile/ui/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../map/ui/map_screen.dart';
 import '../logic/button_nav_bar_cubit.dart';
-
-class ButtomNavBar extends StatefulWidget {
-  const ButtomNavBar({super.key});
-
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
   @override
-  State<ButtomNavBar> createState() => _ButtomNavBarState();
+  State<BottomNavBar> createState() => _BottomNavBarState();
 }
-class _ButtomNavBarState extends State<ButtomNavBar> {
+class _BottomNavBarState extends State<BottomNavBar> {
   List<Widget> screens = [
     HomeScreen(),
     DeliveryScreen(),
     MapScreen(),
     Profile(),
   ];
+
   @override
   Widget build(BuildContext context) {
     var cubit = context.read<ButtonNavBarCubit>();
@@ -37,35 +35,22 @@ class _ButtomNavBarState extends State<ButtomNavBar> {
             },
             items: [
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color:  Theme.of(context).colorScheme.shadow,
-
-                ),
+                icon: Icon(Icons.home, color: Colors.white),
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.alarm_on_outlined,
-                  color:Theme.of(context).colorScheme.shadow,
-                ),
+                icon: Icon(Icons.alarm_on_outlined, color: Colors.white),
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.calendar_today_outlined,
-                  color: Theme.of(context).colorScheme.shadow,
-                ),
+                icon: Icon(Icons.calendar_today_outlined, color: Colors.white),
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person,
-                  color: Theme.of(context).colorScheme.shadow
-                ),
+                icon: Icon(Icons.person, color: Colors.white),
                 backgroundColor: Theme.of(context).colorScheme.primary,
                 label: '',
               ),
